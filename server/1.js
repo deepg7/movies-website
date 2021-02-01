@@ -15,7 +15,7 @@ movieForm.addEventListener('submit',(e)=>{
     const movie =movieInput.value
     messO.textContent='Loading...'
  messT.textContent=''
- fetch('http://localhost:3000/movies?movie='+movie).then((response)=>{
+ fetch(/movies?movie='+movie).then((response)=>{
     response.json().then((data)=>{
         if (data.error){
             messO.textContent=data.error
