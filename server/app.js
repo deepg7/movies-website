@@ -4,6 +4,7 @@ const path =require('path')
 const hbs = require('hbs')
 
 const app=express()
+const port=process.env.PORT || 3000
 const publicDirectoryPath=path.join(__dirname)
 const partialPath=path.join(__dirname,'/views/templates')
 const viewsPath =path.join(__dirname,'/views')
@@ -37,6 +38,6 @@ app.get('/*',(req,res)=>{
     res.send("ERROR! You're trying to view an Invalid URL")
 })
 
-app.listen(3000,()=>{
-    console.log('Server running on port 3000!')
+app.listen(port,()=>{
+    console.log('Server running on port '+port)
 })
